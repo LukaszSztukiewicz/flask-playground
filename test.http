@@ -3,3 +3,43 @@ get http://127.0.0.1:5000/api/v1/bookmarks
 ###
 
 post http://127.0.0.1:5000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "username": "username2",
+    "password": "password",
+    "email": "email@gmail.com"
+}
+
+
+###
+
+get http://127.0.0.1:5000/api/v1/auth/me
+
+###
+
+post http://127.0.0.1:5000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "username": "username",
+    "password": "pass",
+    "email": "email@emaill.com"
+}
+
+###
+post http://127.0.0.1:5000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "email@gmail.com",
+    "password": "password"
+}
+
+###
+GET http://127.0.0.1:5000/api/v1/auth/me
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzNzk1NDYxOSwianRpIjoiYzNmMDY4YjYtODQ2MS00NzI5LTg4MDItM2M1Yzc2MGJiODE0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNjM3OTU0NjE5LCJleHAiOjE2Mzc5NTU1MTl9.v1IRcVKeTM5ylIjke05w6U9depgJ9p8DBPQ-R7mkrlQ
+
+###
+POST http://127.0.0.1:5000/api/v1/auth/token/refresh
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTYzNzk1NDYxOSwianRpIjoiYzNmMDY4YjYtODQ2MS00NzI5LTg4MDItM2M1Yzc2MGJiODE0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNjM3OTU0NjE5LCJleHAiOjE2Mzc5NTU1MTl9.v1IRcVKeTM5ylIjke05w6U9depgJ9p8DBPQ-R7mkrlQ

@@ -15,7 +15,7 @@ class User(db.Model):
     bookmarks = db.relationship('Bookmark', backref="user")
 
     def __repr__(self) -> str:
-        return 'User>>> {self.username}'
+        return f'User>>> {self.username}'
 
 
 class Bookmark(db.Model):
@@ -24,7 +24,7 @@ class Bookmark(db.Model):
     url = db.Column(db.Text, nullable=False)
     short_url = db.Column(db.String(3), nullable=True)
     visits = db.Column(db.Integer, default=0)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, onupdate=datetime.now())
 
@@ -45,4 +45,4 @@ class Bookmark(db.Model):
         self.short_url = self.generate_short_characters()
 
     def __repr__(self) -> str:
-        return 'Boomark>>> {self.url}'
+        return f'Boomark>>> {self.url}'
